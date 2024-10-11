@@ -1,4 +1,4 @@
-# RBTREE의 삭제에 대한 이해와 생각
+# RBTREE의 삭제에 대한 이해
 
 RB tree의 삭제는 doubly black을 설정하고 해결하는 방법이 굉장히 복잡하다. 따라서 doubly black가 leaf node에서 발생하게 하여 상황을 단순화하여 설명해 보고자 한다.
 
