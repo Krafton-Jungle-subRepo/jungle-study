@@ -97,9 +97,9 @@ doubly black의 해결의 근본적인 해결을 위해서 해당 경로의 blac
 ##
 #### 1. sibling node가 red인 경우
 
-sibling node가 red인 경우 parent node는 black임을 앞에서 확인하였고, 따라서 parent node의 black height는 2이며 sibling node는 2개의 black child를 가진다. 이 상황에서 sibling node의 색을 black으로 바꾼 후 sibling node가 parent node의 자리로 가도록 회전한다면 새로운 parent node 기준으로 doubly black이 발생한 반대 방향의 black height는 유지되며, doubly black은 sibling node가 black인 상황으로 변경된다. 이 상황에서 sibling node가 black인 상황을 해결하면 doubly black을 해결할 수 있다.
+sibling node가 red인 경우 parent node는 black임을 앞에서 확인하였고, 따라서 parent node의 black height는 2이며 sibling node는 2개의 black child를 가진다. 이 상황에서 sibling node의 색을 black으로, parent node의 색을 red로 바꾼 후 sibling node가 parent node의 자리로 가도록 회전한다면 새로운 parent node 기준으로 doubly black이 발생한 반대 방향의 black height는 유지되며, doubly black은 sibling node가 black인 2번 상황으로 변경된다. 이 상황에서 sibling node가 black인 상황을 해결하면 doubly black을 해결할 수 있다.
 
-> doubly black이 발생한 node의 sibling node가 red인 경우, sibling node의 색을 black으로 바꾸고 sibling node가 parent node의 자리로 가도록 회전한다.
+> doubly black이 발생한 node의 sibling node가 red인 경우, sibling node의 색을 black으로, parent node의 색을 red로 바꾸고 sibling node가 parent node의 자리로 가도록 회전한다.
 
 ##
 #### 2. sibling node가 black인 경우
