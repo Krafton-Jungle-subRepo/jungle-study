@@ -99,6 +99,8 @@ doubly black의 해결의 근본적인 해결을 위해서 해당 경로의 blac
 
 sibling node가 red인 경우 parent node는 black임을 앞에서 확인하였고, 따라서 parent node의 black height는 2이며 sibling node는 2개의 black child를 가진다. 이 상황에서 sibling node의 색을 black으로 바꾼 후 sibling node가 parent node의 자리로 가도록 회전한다면 새로운 parent node 기준으로 doubly black이 발생한 반대 방향의 black height는 유지되며, doubly black은 sibling node가 black인 상황으로 변경된다. 이 상황에서 sibling node가 black인 상황을 해결하면 doubly black을 해결할 수 있다.
 
+> doubly black이 발생한 node의 sibling node가 red인 경우, sibling node의 색을 black으로 바꾸고 sibling node가 parent node의 자리로 가도록 회전한다.
+
 ##
 #### 2. sibling node가 black인 경우
 
@@ -126,9 +128,13 @@ sibling node가 왼쪽 red child도 가지고 있는 3번 상황을 이와 같�
 
 이 상황에서 sibling node를 red, sibling node의 red left child를 black으로 바꾸어 준 후 red left child가 sibling node의 위치로 가도록 회전한다면 1번 상황이 됨을 알 수 있다. 이후 1번 상황과 똑같이 해결한다.
 
+> sibling node가 하나 이상의 red child를 가지는 경우, parent, red sibling, red sinlibg의 red child가 일직선으로 정렬되도록 한 후 parent와 sibling의 색을 바꾼다. 이후 sibling이 parent의 위치로 가도록 회전한다.
+
 4. sibling node의 양쪽 child가 모두 NIL인 경우 (양쪽 child가 모두 black인 경우)
 
 이 경우, parent node의 색에 따라 parent node의 black height가 1 또는 2가 된다. 이 때, sibling node의 색을 red로 변경하고 parent node에 extra black을 부여한다면 parent node의 left, right 경로 모두 black height가 유지됨을 알 수 있다. 또한 sibling node의 자녀는 모두 NIL(black) node 이므로 red property가 위반되지 않는다. 만약 parent node가 red일 경우 parent node를 black으로 바꾸어 주면 상황이 해결된다. 만약 parnet node가 black일 경우, parent node를 기준으로 새로운 doubly black이 발생한다. 이 때는 앞선 과정들을 재귀적으로 반복하여 해결할 수 있다.
+
+> sibling node가 black child만을 가지는 경우, sibling node를 red로 바꾸고 parent에 extra black을 부여한 후 재귀적으로 해결한다.
 
 
 오타, 잘못된 내용 지적, 질문 환영합니다 :)
